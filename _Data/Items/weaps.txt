@@ -1,0 +1,31 @@
+Sword	Greatsword	A big sword	0-10-0	5	D8	Strength	
+Sword	Katana	Sharp and Lethal	1-0-0	3	D12	Dexterity	
+Sword	Longsword	Short and handy	0-0-50	3	D6	Strength	
+Sword	Broadsword	Wide blade sword	0-1-0	3	D7	Strength	
+Sword	Darksword	Its blade is full of dark magic	3-0-0	6	D13	Intelligence	
+Sword	Drake Sword	A sword made of dragon scales	3-0-0	8	D14	Strength	
+Sword	Blade of Dominance	A sword that demands dominance	0-50-0	5	D10	Charisma	
+Sword	Crystal Sword	Shines in the dark	3-50-0	4	D12	Intelligence	
+Sword	Enchanter's Sword	A Sword that charms	0-80-0	4	D7	Charisma	
+Sword	Bandit's Knife	The favorite of lowly thieves and bandits	0-0-30	2	D5	Dexterity	
+Sword	Parrying Dagger	A favorite of the knights that fight without shield	0-1-50	2	D5	Dexterity	
+Sword	Ghost Dagger	A cursed weapon	0-50-94	2	D7	Dexterity	
+Sword	Silver Knife	A blade made of shiny silver	0-30-0	3	D6	Dexterity	
+Spear	Winged Spear	A long-hilted spear with a barbed point	0-0-30	4	D6	Dexterity	
+Spear	Pike	Long spear with a very long red hilt	0-1-0	7	D8	Strength	
+Spear	Demon's Spear	Carved from the bones of fellow demons	6-66-6	4	D12	Dexterity	
+Spear	Moonlight Spear	Weapon born from the mystical creature	5-0-0	4	D13	Intelligence	
+Bow	Composite Bow	Composite bow emphasizing power	0-5-0	3	D7	Dexterity	20
+Bow	Longbow	Projectile weapon for experienced hunters	0-50-0	4	D10	Dexterity	18
+Bow	Darkmoon Bow	Bow born from the souls of innocents	5-0-0	4	D15	Dexterity	18
+Bow	Dragonslayer Greatbow	Bow of the Dragonslayers	6-0-0	8	D15	Strength	12
+Bow	Crossbow	Standard crossbow issued to soldiers	0-1-0	4	D8	Dexterity	16
+Bow	Black Knight Bow	Bow of the black knights wandering into the unknown	1-0-0	5	D11	Dexterity	18
+Bow	Crossbow of the Palace	The Crossbow of the Celestial Guards	1-50-50	3	D10	Dexterity	20
+BattleInstrument	Axe Mandolin	A mandolin a little too *sharp*	0-0-50	3	D6	Charisma	
+BattleInstrument	Eardrum-breaker trombone	You don't wanna hear its melody	0-10-0	4	D11	Charisma	
+BattleInstrument	Tuba of the Dwarves	Dwarves love this instrument	0-60-0	6	D12	Charisma	
+BattleInstrument	Guitar-Saw	Play and slice	1-0-0	4	D12	Charisma	
+BattleInstrument	Enchanted Violin	A sweet and mesmerizing melody comes from this instrument	3-0-0	3	D13	Charisma	
+BattleInstrument	Celestial Choirs Harp	A harp usually played by the celestial choirs	5-0-0	5	D15	Charisma	
+BattleInstrument	Thunder Guitar	This guitar is made of thunders	3-50-0	4	D12	Intelligence	

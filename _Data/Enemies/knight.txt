@@ -1,0 +1,25 @@
+Knight[PARAM]
+Sword Slashes_D4,
+Sword Thrust_D6,
+Shield Strike_D4,
+Charge with its shield_D4[PARAM]
+  / \                     
+  | |                     
+  |.|                     
+  |.|                     
+  |:|      __             
+,_|:|_,   /  )            
+  (Oo    / _I_            
+   +\ \  || __|           
+      \ \||___|           
+        \ /.:.\-\         
+         |.:. /-----\     
+         |___|::oOo::|    
+         /   |:<_T_>:|    
+        |_____\ ::: /     
+         | |  \ \:/       
+         | |   | |        
+         \ /   | \___     
+         / |   \_____\    
+         `-'              
+[PARAM]

@@ -1,0 +1,83 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <StartupObject>BasicRPG.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\**" />
+    <EmbeddedResource Remove="Data\**" />
+    <None Remove="Data\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="_Data\AsciiArt\Classes\Bard.txt" />
+    <None Remove="_Data\AsciiArt\Classes\Ranger.txt" />
+    <None Remove="_Data\AsciiArt\Classes\Warrior.txt" />
+    <None Remove="_Data\AsciiArt\Classes\Wizard.txt" />
+    <None Remove="_Data\AsciiArt\Gate.txt" />
+    <None Remove="_Data\AsciiArt\Shop.txt" />
+    <None Remove="_Data\Enemies\crab.txt" />
+    <None Remove="_Data\Enemies\giant bee.txt" />
+    <None Remove="_Data\Enemies\GiantSpiderWolf.txt" />
+    <None Remove="_Data\Enemies\gryphon.txt" />
+    <None Remove="_Data\Enemies\imp.txt" />
+    <None Remove="_Data\Enemies\knight.txt" />
+    <None Remove="_Data\Enemies\scorpion.txt" />
+    <None Remove="_Data\Enemies\wolf.txt" />
+    <None Remove="_Data\Items\potions.txt" />
+    <None Remove="_Data\Items\weaps.txt" />
+    <None Remove="_Data\Music\BardSongs\Besame Mucho.txt" />
+    <None Remove="_Data\Music\BardSongs\JingleBells.txt" />
+    <None Remove="_Data\Music\BardSongs\Tetris.txt" />
+    <None Remove="_Data\Music\Instruments\BardScale1.txt" />
+    <None Remove="_Data\Music\Instruments\BardScale2.txt" />
+    <None Remove="_Data\Music\Instruments\BardScale3.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="_Data\AsciiArt\Classes\Bard.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_Data\AsciiArt\Classes\Ranger.txt" />
+    <EmbeddedResource Include="_Data\AsciiArt\Classes\Warrior.txt" />
+    <EmbeddedResource Include="_Data\AsciiArt\Classes\Wizard.txt" />
+    <EmbeddedResource Include="_Data\AsciiArt\Gate.txt" />
+    <EmbeddedResource Include="_Data\AsciiArt\Shop.txt" />
+    <EmbeddedResource Include="_Data\Enemies\crab.txt" />
+    <EmbeddedResource Include="_Data\Enemies\giant bee.txt" />
+    <EmbeddedResource Include="_Data\Enemies\GiantSpiderWolf.txt" />
+    <EmbeddedResource Include="_Data\Enemies\gryphon.txt" />
+    <EmbeddedResource Include="_Data\Enemies\imp.txt" />
+    <EmbeddedResource Include="_Data\Enemies\knight.txt" />
+    <EmbeddedResource Include="_Data\Enemies\scorpion.txt" />
+    <EmbeddedResource Include="_Data\Enemies\wolf.txt" />
+    <EmbeddedResource Include="_Data\Items\potions.txt" />
+    <EmbeddedResource Include="_Data\Items\weaps.txt" />
+    <EmbeddedResource Include="_Data\Music\BardSongs\Besame Mucho.txt" />
+    <EmbeddedResource Include="_Data\Music\BardSongs\JingleBells.txt" />
+    <EmbeddedResource Include="_Data\Music\BardSongs\Tetris.txt" />
+    <EmbeddedResource Include="_Data\Music\Instruments\BardScale1.txt" />
+    <EmbeddedResource Include="_Data\Music\Instruments\BardScale3.txt" />
+    <EmbeddedResource Include="_Data\Music\Instruments\BardScale2.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+
+</Project>
