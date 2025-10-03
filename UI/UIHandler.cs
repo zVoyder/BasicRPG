@@ -220,16 +220,20 @@ namespace BasicRPG.UI
 
             try
             {
-                switch (pos) // lo tengo così nel caso dovessi aggiungere altre posizioni testuali
+                switch (pos)
                 {
                     case TextPosition.Center:
                         Console.SetCursorPosition((Console.WindowWidth - text.Length) / 2, Console.CursorTop);
                         break;
+                    case TextPosition.Left:
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException(nameof(pos), pos, null);
                 }
             }
             catch (Exception)
             {
-                Menu.ShowWindow(Menu.ThisConsole, Menu.MAXIMIZE);
+                // Menu.ShowWindow(Menu.ThisConsole, Menu.MAXIMIZE);
             }
 
             Console.ForegroundColor = textColor;
@@ -243,7 +247,7 @@ namespace BasicRPG.UI
             {
                 ConsoleColor currentColor = Console.ForegroundColor;
 
-                switch (pos) // lo tengo così nel caso dovessi aggiungere altre posizioni testuali
+                switch (pos)
                 {
                     case TextPosition.Center:
                         Console.SetCursorPosition((Console.WindowWidth - t.Length) / 2, Console.CursorTop);
@@ -322,6 +326,5 @@ namespace BasicRPG.UI
             Console.Write(inputmsg);
             return Console.ReadLine();
         }
-
     }
 }

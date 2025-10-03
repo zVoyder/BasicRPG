@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Text;
-
 using BasicRPG.RPGRaces;
 using BasicRPG.UI;
 using BasicRPG.InventorySystem;
@@ -14,6 +13,8 @@ using BasicRPG.InventorySystem.Potions;
 
 namespace BasicRPG.Character
 {
+    using System.Diagnostics;
+
     //[Serializable]
     class PlayerCharacter
     {
@@ -29,7 +30,7 @@ namespace BasicRPG.Character
         Level level;
 
         Backpack backpack;
-        
+
         public Backpack Backpack { get => backpack; set => backpack = value; }
         public Currency Gold { get => moneybag; set => moneybag = value; }
         public Level Level { get => level; }
@@ -40,7 +41,6 @@ namespace BasicRPG.Character
         public PlayerCharacter()
         {
             playerAttributes = new RPGStatistics();
-
             moneybag = new Currency(0, 5, 50);
             level = new Level();
             hp = new HealthPoints(0);
@@ -52,8 +52,8 @@ namespace BasicRPG.Character
 
             UIHandler.PrintPositionedText("What's your name?");
             name = UIHandler.AskLine();
-            
-            age = UIHandler.SliderSelector(18, 100, "Select your age", ConsoleColor.Yellow);// Migliorabile usando l'età massima di ogni razza
+
+            age = UIHandler.SliderSelector(18, 100, "Select your age", ConsoleColor.Yellow); // Migliorabile usando l'età massima di ogni razza
 
             Console.Clear();
             PrintInfoAttributes();
@@ -89,7 +89,6 @@ namespace BasicRPG.Character
 
         private void CalculateHitPoints()
         {
-            // Il livello non conta piu visto che va a scalare in base alle costituzione
             hp = new HealthPoints(playerAttributes.Attributes[Statistic.Constitution] / 2);
         }
 
@@ -161,7 +160,7 @@ namespace BasicRPG.Character
                     RPGClassTypes.Warrior => new Warrior(),
                     RPGClassTypes.Ranger => new Ranger(),
                     RPGClassTypes.Bard => new Bard(),
-                    RPGClassTypes.Wizard => new Wizard(),
+                    // RPGClassTypes.Wizard => new Wizard(),
                     _ => null
                 };
 
@@ -187,7 +186,6 @@ namespace BasicRPG.Character
 
                 playerRace.PrintRacialBonus();
                 Console.WriteLine("\n\n" + playerRace.Description + "\n\n");
-
             } while (UIHandler.PressSpecificKeyToContinue(ConsoleKey.Backspace, "Press [Backspace] to select an other race or any key to confirm your choice..."));
 
             playerAttributes += playerRace.Bonuses;
@@ -198,7 +196,11 @@ namespace BasicRPG.Character
             int selectedMethod =
                 UIHandler.SelectiveChoice(
                     "Would you like to set these attributes by Point Buy or by Random?",
-                    new string[] { "Point Buy", "Random Generation" },
+                    new string[]
+                    {
+                        "Point Buy",
+                        "Random Generation"
+                    },
                     TextPosition.Center);
 
             Console.Clear();
@@ -213,8 +215,6 @@ namespace BasicRPG.Character
                     playerAttributes.RandomGeneration();
                     break;
             }
-
-            
         }
 
 
@@ -222,7 +222,8 @@ namespace BasicRPG.Character
         /// Add exp to the level of the player and if the level increases, the player must roll for increase his/her attributes. 
         /// </summary>
         /// <param name="exp">The exp to add</param>
-        public void AddExperience(int exp) {
+        public void AddExperience(int exp)
+        {
             int nl = level.AddExperience(exp); //add exp to the level of the player and return the numbers of levels increased
 
             if (nl > 0)
@@ -258,7 +259,6 @@ namespace BasicRPG.Character
             UIHandler.PrintPositionedText(name + " takes " + damagepoints + " damage");
             if (!hp.Damage(damagepoints))
             {
-                
                 Death();
             }
         }
@@ -278,27 +278,35 @@ namespace BasicRPG.Character
             Console.Clear();
 
             string dead =
-                  "▓██   ██▓ ▒█████   █    ██    ▓█████▄  ██▓▓█████ ▓█████▄ \n"+
-                  "▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▒██▀ ██▌▓██▒▓█   ▀ ▒██▀ ██▌ \n"+
-                  "▒██ ██░▒██░  ██▒▓██  ▒██░   ░██   █▌▒██▒▒███   ░██   █▌  \n"+
-                  "░ ▐██▓░▒██   ██░▓▓█  ░██░   ░▓█▄   ▌░██░▒▓█  ▄ ░▓█▄   ▌  \n"+
-                  "░ ██▒▓░░ ████▓▒░▒▒█████▓    ░▒████▓ ░██░░▒████▒░▒████▓   \n"+
-                  "██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒     ▒▒▓  ▒ ░▓  ░░ ▒░ ░ ▒▒▓  ▒    \n"+
-                  "▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░     ░ ▒  ▒  ▒ ░ ░ ░  ░ ░ ▒  ▒  \n"+
-                  "▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░     ░ ░  ░  ▒ ░   ░    ░ ░  ░  \n"+
-                  "░ ░         ░ ░     ░           ░     ░     ░  ░   ░     \n"+
-                  "░ ░                           ░                  ░       \n";
+                "▓██   ██▓ ▒█████   █    ██    ▓█████▄  ██▓▓█████ ▓█████▄ \n" +
+                "▒██  ██▒▒██▒  ██▒ ██  ▓██▒   ▒██▀ ██▌▓██▒▓█   ▀ ▒██▀ ██▌ \n" +
+                "▒██ ██░▒██░  ██▒▓██  ▒██░   ░██   █▌▒██▒▒███   ░██   █▌  \n" +
+                "░ ▐██▓░▒██   ██░▓▓█  ░██░   ░▓█▄   ▌░██░▒▓█  ▄ ░▓█▄   ▌  \n" +
+                "░ ██▒▓░░ ████▓▒░▒▒█████▓    ░▒████▓ ░██░░▒████▒░▒████▓   \n" +
+                "██▒▒▒ ░ ▒░▒░▒░ ░▒▓▒ ▒ ▒     ▒▒▓  ▒ ░▓  ░░ ▒░ ░ ▒▒▓  ▒    \n" +
+                "▓██ ░▒░   ░ ▒ ▒░ ░░▒░ ░ ░     ░ ▒  ▒  ▒ ░ ░ ░  ░ ░ ▒  ▒  \n" +
+                "▒ ▒ ░░  ░ ░ ░ ▒   ░░░ ░ ░     ░ ░  ░  ▒ ░   ░    ░ ░  ░  \n" +
+                "░ ░         ░ ░     ░           ░     ░     ░  ░   ░     \n" +
+                "░ ░                           ░                  ░       \n" +
+                "                                                         \n" +
+                "                       Try Again?                        \n";
 
             Console.WriteLine("\n\n");
-            UIHandler.PrintPositionedText(dead.Split("\n"), TextPosition.Center, ConsoleColor.DarkRed);
-            UIHandler.PressAnyKeyToContinue();
-            Environment.Exit(0); // Per adesso
+            string[] menuChoices = new string[]
+            {
+                "Yes",
+                "No "
+            };
+            
+            int choice = UIHandler.SelectiveChoice(dead, menuChoices, TextPosition.Center, ConsoleColor.DarkRed);
+            if (choice == 0)
+            {
+                ProcessModule processModule = System.Diagnostics.Process.GetCurrentProcess().MainModule;
+                if (processModule != null)
+                    Process.Start(processModule.FileName);
+            }
+            
+            Environment.Exit(0);
         }
-
-
-        /* salvare su file o su resources, se si puo fare?*/
     }
 }
-
-
-

@@ -12,7 +12,7 @@ namespace BasicRPG.Character.RPGClasses
         Warrior,
         Ranger,
         Bard,
-        Wizard
+        // Wizard
     }
     
     abstract class RPGClass

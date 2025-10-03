@@ -19,7 +19,7 @@ namespace BasicRPG.Properties {
     // tramite uno strumento quale ResGen o Visual Studio.
     // Per aggiungere o rimuovere un membro, modificare il file con estensione ResX ed eseguire nuovamente ResGen
     // con l'opzione /str oppure ricompilare il progetto VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -457,6 +457,76 @@ namespace BasicRPG.Properties {
         internal static string Music_Besame_Mucho {
             get {
                 return ResourceManager.GetString("Music.Besame_Mucho", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a la_3_500
+        ///do_4_250
+        ///re_4_250
+        ///mi_4_500
+        ///
+        ///fa_4_375
+        ///rest_0_125
+        ///
+        ///sol_4_250
+        ///fa_4_250
+        ///mi_4_250
+        ///re_4_250
+        ///
+        ///do_4_500
+        ///rest_0_250
+        ///
+        ///la_3_500
+        ///do_4_250
+        ///re_4_250
+        ///fa_4_500
+        ///
+        ///mi_4_375
+        ///rest_0_125
+        ///
+        ///sol_4_125
+        ///fa_4_125
+        ///mi_4_125
+        ///re_4_125
+        ///
+        ///do_4_250
+        ///rest_0_250
+        ///
+        ///la_3_500
+        ///sol_3_250
+        ///la_3_250
+        ///do_4_500
+        ///
+        ///re_4_250
+        ///mi_4_250
+        ///fa_4_250
+        ///mi_4_250
+        ///
+        ///re_4_500
+        ///rest_0_250
+        ///
+        ///do_4_125
+        ///do_4_125
+        ///do_4_250
+        ///
+        ///re_4_125
+        ///re_4_125
+        ///re_4_250
+        ///
+        ///mi_4_125
+        ///fa_4_125
+        ///sol_4_188
+        ///fa_4_62
+        ///
+        ///mi_4_500
+        ///
+        ///fa_4_125
+        ///fa_4_125        /// [stringa troncata]&quot;;.
+        /// </summary>
+        internal static string Music_Ekylios {
+            get {
+                return ResourceManager.GetString("Music.Ekylios", resourceCulture);
             }
         }
         

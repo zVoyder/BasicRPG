@@ -56,15 +56,14 @@ namespace BasicRPG.Encounters
         private void StartFloor(int floor)
         {
             UIHandler.PressAnyKeyToContinue("You are entering the floor " + (floor+1) + " this is gonna be " + (ChallengeRating)floor + " press any key to continue...");
-
-
+            
             int numberofenemies = Dice.RollDice(DiceTypes.D10);
             for (int i = 0; i < numberofenemies; i++)
             {
                 var rand = new Random();
                 var enemynames = Enum.GetNames(typeof(EnemyNames));
                 Enemy en = new Enemy(enemynames[rand.Next(enemynames.Length)], (ChallengeRating)((floor > Enum.GetNames(typeof(ChallengeRating)).Length-1) ? Enum.GetNames(typeof(ChallengeRating)).Length - 1 : floor)); // because it could start from a higher CR
-                Encounter.Fight(pl, en); // va anche a clearare
+                Encounter.Fight(pl, en); // it also clears
             }
 
             Console.Clear();

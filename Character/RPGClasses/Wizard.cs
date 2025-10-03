@@ -17,7 +17,7 @@ namespace BasicRPG.Character.RPGClasses
         {
             this.Art = new AsciiArt("AsciiArt.Wizard");
 
-            Classtype = RPGClassTypes.Wizard;
+            // Classtype = RPGClassTypes.Wizard;
 
             Description = "Wild and enigmatic, varied in form and function,\n" +
                 "the power of magic draws students who seek to master its mysteries.\n" +
