@@ -43,7 +43,6 @@ namespace BasicRPG.Character.RPGClasses
                     PotionTypes.Flask,
                     new Dice(DiceTypes.D4));
 
-
             BaseKit.Add(defaultsword);
             BaseKit.Add(baseFlask);
 

@@ -14,10 +14,12 @@ using BasicRPG.InventorySystem.Potions;
 namespace BasicRPG.Character
 {
     using System.Diagnostics;
+    using Dices;
 
-    //[Serializable]
     class PlayerCharacter
     {
+        const int MinHp = 2;
+
         string name;
         int age;
 
@@ -53,7 +55,10 @@ namespace BasicRPG.Character
             UIHandler.PrintPositionedText("What's your name?");
             name = UIHandler.AskLine();
 
-            age = UIHandler.SliderSelector(18, 100, "Select your age", ConsoleColor.Yellow); // Migliorabile usando l'età massima di ogni razza
+            if (string.IsNullOrWhiteSpace(name))
+                name = "Nameless One";
+
+            age = UIHandler.SliderSelector(18, 100, "Select your age", ConsoleColor.Yellow);
 
             Console.Clear();
             PrintInfoAttributes();
@@ -89,7 +94,10 @@ namespace BasicRPG.Character
 
         private void CalculateHitPoints()
         {
-            hp = new HealthPoints(playerAttributes.Attributes[Statistic.Constitution] / 2);
+            int constitution = playerAttributes.Attributes[Statistic.Constitution];
+            int baseHp = MinHp + constitution;
+            int hpFromLevel = (level.NumberLevel - 1) * ((constitution / 2) + 2);
+            hp = new HealthPoints(baseHp + hpFromLevel);
         }
 
         public void PrintCharacter()
@@ -217,7 +225,6 @@ namespace BasicRPG.Character
             }
         }
 
-
         /// <summary>
         /// Add exp to the level of the player and if the level increases, the player must roll for increase his/her attributes. 
         /// </summary>
@@ -248,10 +255,29 @@ namespace BasicRPG.Character
 
         public int Attack(Weapon wep, out int bonusDamage)
         {
-            int attraffbonus = (int)playerAttributes.Attributes[wep.AttributeAffinity] / 2;
+            int weaponDamage = wep.Use();
+            bonusDamage = CalculateAttack(wep, weaponDamage);
+            return weaponDamage + bonusDamage;
+        }
 
-            bonusDamage = attraffbonus;
-            return wep.Use() + attraffbonus;
+        private int CalculateAttack(Weapon wep, int weaponDamage)
+        {
+            int value = playerAttributes.Attributes[wep.AttributeAffinity];
+            int lvl = Level.NumberLevel;
+            int maxDamage = wep.damageDice.GetMaxValue();
+            double rollFactor = (double)weaponDamage / maxDamage;
+
+            int bonus = wep.AttributeAffinity switch
+            {
+                Statistic.Strength => (value / 2) + (lvl / 2),
+                Statistic.Dexterity => (int)(2 * Math.Log(value + 1)) + (lvl / 3),
+                Statistic.Constitution => (value / 4) + (lvl / 4),
+                Statistic.Intelligence or Statistic.Wisdom or Statistic.Charisma
+                    => (int)Math.Sqrt(value * 2) + (lvl / 3),
+                _ => throw new ArgumentOutOfRangeException()
+            };
+
+            return (int)(bonus * rollFactor);
         }
 
         public void TakeDamage(int damagepoints)
@@ -265,11 +291,17 @@ namespace BasicRPG.Character
 
         public void HealPlayer(HealPotion pot, out int bonusHeal)
         {
-            bonusHeal = playerAttributes.Attributes[Statistic.Wisdom] / 3;
+            bonusHeal = CalculateHealBonus();
             int heal = pot.Use();
-
             heal += bonusHeal;
             hp.Heal(heal);
+        }
+
+        private int CalculateHealBonus()
+        {
+            int wisdom = playerAttributes.Attributes[Statistic.Wisdom];
+            int lvl = Level.NumberLevel;
+            return (int)Math.Sqrt(wisdom * 2) + (lvl / 3) + 2;
         }
 
         public void Death()
@@ -297,7 +329,7 @@ namespace BasicRPG.Character
                 "Yes",
                 "No "
             };
-            
+
             int choice = UIHandler.SelectiveChoice(dead, menuChoices, TextPosition.Center, ConsoleColor.DarkRed);
             if (choice == 0)
             {
@@ -305,7 +337,7 @@ namespace BasicRPG.Character
                 if (processModule != null)
                     Process.Start(processModule.FileName);
             }
-            
+
             Environment.Exit(0);
         }
     }

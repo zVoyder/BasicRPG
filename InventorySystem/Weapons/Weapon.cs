@@ -11,11 +11,11 @@ namespace BasicRPG.InventorySystem.Weapons
 {
     class Weapon : Item
     {
+        public Dice damageDice;
         protected string[] attacks;
         
         Statistic attributeAffinity; // The attribute affinity of the weapon, i leave it here due to specific cases where a sword can have an Arcana affinity instead of Athletic.
 
-        Dice damageDice;
 
         public Statistic AttributeAffinity { get => attributeAffinity; set => attributeAffinity = value; }
 

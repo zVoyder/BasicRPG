@@ -35,20 +35,16 @@ namespace BasicRPG.InventorySystem
             
             foreach (string itemln in itemlns.Where(s => s != "\r" && s != ""))
             {
-                string[] splittedItem = itemln.Split("\t");
-
-
+                string[] splittedItem = itemln.Split("___");
                 string[] coststrings = splittedItem[3].Split("-");
                 Currency cost = new Currency(int.Parse(coststrings[0]), int.Parse(coststrings[1]), int.Parse(coststrings[2]));
-
-
+                
                 Item it = splittedItem[0] switch
                 {
                     "Sword" => new Sword(splittedItem[1], splittedItem[2], cost, double.Parse(splittedItem[4]), new Dice(Enum.Parse<DiceTypes>(splittedItem[5])), Enum.Parse<Statistic>(splittedItem[6])),
                     "Spear" => new Spear(splittedItem[1], splittedItem[2], cost, double.Parse(splittedItem[4]), new Dice(Enum.Parse<DiceTypes>(splittedItem[5])), Enum.Parse<Statistic>(splittedItem[6])),
-                    "Bow" => new Bow(splittedItem[1], splittedItem[2], cost, double.Parse(splittedItem[4]), new Dice(Enum.Parse<DiceTypes>(splittedItem[5])), Enum.Parse<Statistic>(splittedItem[6]), int.Parse(splittedItem[7])),
+                    "Bow" => new Bow(splittedItem[1], splittedItem[2], cost, double.Parse(splittedItem[4]), new Dice(Enum.Parse<DiceTypes>(splittedItem[5])), Enum.Parse<Statistic>(splittedItem[6]), int.Parse(splittedItem[7]), int.Parse(splittedItem[8])),
                     "BattleInstrument" => new BattleInstrument(splittedItem[1], splittedItem[2], cost, double.Parse(splittedItem[4]), new Dice(Enum.Parse<DiceTypes>(splittedItem[5])), Enum.Parse<Statistic>(splittedItem[6])),
-
                     "HealPotion" => new HealPotion(splittedItem[1], splittedItem[2], cost, Enum.Parse<PotionTypes>(splittedItem[4]), new Dice(Enum.Parse<DiceTypes>(splittedItem[5]))),
                     _ => null,
                 };

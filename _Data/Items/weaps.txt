@@ -1,31 +1,31 @@
-Sword	Greatsword	A big sword	0-10-0	5	D8	Strength	
-Sword	Katana	Sharp and Lethal	1-0-0	3	D12	Dexterity	
-Sword	Longsword	Short and handy	0-0-50	3	D6	Strength	
-Sword	Broadsword	Wide blade sword	0-1-0	3	D7	Strength	
-Sword	Darksword	Its blade is full of dark magic	3-0-0	6	D13	Intelligence	
-Sword	Drake Sword	A sword made of dragon scales	3-0-0	8	D14	Strength	
-Sword	Blade of Dominance	A sword that demands dominance	0-50-0	5	D10	Charisma	
-Sword	Crystal Sword	Shines in the dark	3-50-0	4	D12	Intelligence	
-Sword	Enchanter's Sword	A Sword that charms	0-80-0	4	D7	Charisma	
-Sword	Bandit's Knife	The favorite of lowly thieves and bandits	0-0-30	2	D5	Dexterity	
-Sword	Parrying Dagger	A favorite of the knights that fight without shield	0-1-50	2	D5	Dexterity	
-Sword	Ghost Dagger	A cursed weapon	0-50-94	2	D7	Dexterity	
-Sword	Silver Knife	A blade made of shiny silver	0-30-0	3	D6	Dexterity	
-Spear	Winged Spear	A long-hilted spear with a barbed point	0-0-30	4	D6	Dexterity	
-Spear	Pike	Long spear with a very long red hilt	0-1-0	7	D8	Strength	
-Spear	Demon's Spear	Carved from the bones of fellow demons	6-66-6	4	D12	Dexterity	
-Spear	Moonlight Spear	Weapon born from the mystical creature	5-0-0	4	D13	Intelligence	
-Bow	Composite Bow	Composite bow emphasizing power	0-5-0	3	D7	Dexterity	20
-Bow	Longbow	Projectile weapon for experienced hunters	0-50-0	4	D10	Dexterity	18
-Bow	Darkmoon Bow	Bow born from the souls of innocents	5-0-0	4	D15	Dexterity	18
-Bow	Dragonslayer Greatbow	Bow of the Dragonslayers	6-0-0	8	D15	Strength	12
-Bow	Crossbow	Standard crossbow issued to soldiers	0-1-0	4	D8	Dexterity	16
-Bow	Black Knight Bow	Bow of the black knights wandering into the unknown	1-0-0	5	D11	Dexterity	18
-Bow	Crossbow of the Palace	The Crossbow of the Celestial Guards	1-50-50	3	D10	Dexterity	20
-BattleInstrument	Axe Mandolin	A mandolin a little too *sharp*	0-0-50	3	D6	Charisma	
-BattleInstrument	Eardrum-breaker trombone	You don't wanna hear its melody	0-10-0	4	D11	Charisma	
-BattleInstrument	Tuba of the Dwarves	Dwarves love this instrument	0-60-0	6	D12	Charisma	
-BattleInstrument	Guitar-Saw	Play and slice	1-0-0	4	D12	Charisma	
-BattleInstrument	Enchanted Violin	A sweet and mesmerizing melody comes from this instrument	3-0-0	3	D13	Charisma	
-BattleInstrument	Celestial Choirs Harp	A harp usually played by the celestial choirs	5-0-0	5	D15	Charisma	
-BattleInstrument	Thunder Guitar	This guitar is made of thunders	3-50-0	4	D12	Intelligence	
+Sword___Greatsword___A big sword___0-10-0___5___D8___Strength
+Sword___Katana___Sharp and Lethal___1-0-0___3___D12___Dexterity
+Sword___Longsword___Short and handy___0-0-50___3___D6___Strength
+Sword___Broadsword___Wide blade sword___0-1-0___3___D7___Strength
+Sword___Darksword___Its blade is full of dark magic___3-0-0___6___D13___Intelligence
+Sword___Drake Sword___A sword made of dragon scales___3-0-0___8___D14___Strength
+Sword___Blade of Dominance___A sword that demands dominance___0-50-0___5___D10___Charisma
+Sword___Crystal Sword___Shines in the dark___3-50-0___4___D12___Intelligence
+Sword___Enchanter's Sword___A Sword that charms___0-80-0___4___D7___Charisma
+Sword___Bandit's Knife___The favorite of lowly thieves and bandits___0-0-30___2___D5___Dexterity
+Sword___Parrying Dagger___A favorite of the knights that fight without shield___0-1-50___2___D5___Dexterity
+Sword___Ghost Dagger___A cursed weapon___0-50-94___2___D7___Dexterity
+Sword___Silver Knife___A blade made of shiny silver___0-30-0___3___D6___Dexterity
+Spear___Winged Spear___A long-hilted spear with a barbed point___0-0-30___4___D6___Dexterity
+Spear___Pike___Long spear with a very long red hilt___0-1-0___7___D8___Strength
+Spear___Demon's Spear___Carved from the bones of fellow demons___6-66-6___4___D12___Dexterity
+Spear___Moonlight Spear___Weapon born from the mystical creature___5-0-0___4___D13___Intelligence
+Bow___Composite Bow___Composite bow emphasizing power___0-5-0___3___D7___Dexterity___20___20
+Bow___Longbow___Projectile weapon for experienced hunters___0-50-0___4___D10___Dexterity___18___18
+Bow___Darkmoon Bow___Bow born from the souls of innocents___5-0-0___4___D15___Dexterity___18___18
+Bow___Dragonslayer Greatbow___Bow of the Dragonslayers___6-0-0___8___D15___Strength___12___12
+Bow___Crossbow___Standard crossbow issued to soldiers___0-1-0___4___D8___Dexterity___16___16
+Bow___Black Knight Bow___Bow of the black knights wandering into the unknown___1-0-0___5___D11___Dexterity___18___18
+Bow___Crossbow of the Palace___The Crossbow of the Celestial Guards___1-50-50___3___D10___Dexterity___20___20
+BattleInstrument___Axe Mandolin___A mandolin a little too *sharp*___0-0-50___3___D6___Charisma
+BattleInstrument___Eardrum-breaker trombone___You don't wanna hear its melody___0-10-0___4___D11___Charisma
+BattleInstrument___Tuba of the Dwarves___Dwarves love this instrument___0-60-0___6___D12___Charisma
+BattleInstrument___Guitar-Saw___Play and slice___1-0-0___4___D12___Charisma
+BattleInstrument___Enchanted Violin___A sweet and mesmerizing melody comes from this instrument___3-0-0___3___D13___Charisma
+BattleInstrument___Celestial Choirs Harp___A harp usually played by the celestial choirs___5-0-0___5___D15___Charisma
+BattleInstrument___Thunder Guitar___This guitar is made of thunders___3-50-0___4___D12___Intelligence

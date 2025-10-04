@@ -139,6 +139,9 @@
   <data name="AsciiArt.Wizard" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\_data\asciiart\classes\wizard.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="bat" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\_Data\Enemies\bat.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="bee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\_data\enemies\giant bee.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>

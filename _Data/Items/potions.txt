@@ -1,16 +1,16 @@
-HealPotion	Flask of Life	A simple medicine	0-0-25	Flask	D4
-HealPotion	Wineskin of Life	A wineskin full of life	0-0-50	Canteen	D4
-HealPotion	Tonic of Life	This tonic will heal your flesh	0-1-0	Flask	D6
-HealPotion	Vial of Rejuvenation	Rejuvenate yourself	0-1-50	Vial	D8
-HealPotion	Elixir of Regeneration	This fantastic elixir can really fix you up	0-25-0	Flask	D8
-HealPotion	Wineskin of Regeneration	A wineskin full of regeneration elixir	0-50-0	Wineskin	D8
-HealPotion	Barrel of Regeneration	A barrel full of regeneration elixir	0-75-0	Barrel	D8
-HealPotion	Brew of Regeneration	An elixir of regeneration with an alcohol addition	0-35-0	Vial	D10
-HealPotion	Potion of the Healers	This amazing potion is made by the strongest wizards	1-0-0	Flask	D12
-HealPotion	Magic Brew	The most favorite beer among wizards	1-0-0	Vial	D15
-HealPotion	Healers' Wineskin	The wizards' wineskin	1-50-0	Wineskin	D15
-HealPotion	Barrel of the Healers	The wizards' barrel	2-0-0	Barrel	D15
-HealPotion	Divinity Canteen	An extremely rare potion that can heal any wound	4-0-0	Canteen	D20
-HealPotion	Divinity Barrel	Can heal any wound	6-50-0	Barrel	D20
-HealPotion	Hand of Netho	??????????????	10-0-0	Canteen	D40
-HealPotion	Grace of Netho	??????????????	20-0-0	Barrel	D40
+HealPotion___Flask of Life___A simple medicine___0-0-25___Flask___D4
+HealPotion___Wineskin of Life___A wineskin full of life___0-0-50___Canteen___D4
+HealPotion___Tonic of Life___This tonic will heal your flesh___0-1-0___Flask___D6
+HealPotion___Vial of Rejuvenation___Rejuvenate yourself___0-1-50___Vial___D8
+HealPotion___Elixir of Regeneration___This fantastic elixir can really fix you up___0-25-0___Flask___D8
+HealPotion___Wineskin of Regeneration___A wineskin full of regeneration elixir___0-50-0___Wineskin___D8
+HealPotion___Barrel of Regeneration___A barrel full of regeneration elixir___0-75-0___Barrel___D8
+HealPotion___Brew of Regeneration___An elixir of regeneration with an alcohol addition___0-35-0___Vial___D10
+HealPotion___Potion of the Healers___This amazing potion is made by the strongest wizards___1-0-0___Flask___D12
+HealPotion___Magic Brew___The most favorite beer among wizards___1-0-0___Vial___D15
+HealPotion___Healers' Wineskin___The wizards' wineskin___1-50-0___Wineskin___D15
+HealPotion___Barrel of the Healers___The wizards' barrel___2-0-0___Barrel___D15
+HealPotion___Divinity Canteen___An extremely rare potion that can heal any wound___4-0-0___Canteen___D20
+HealPotion___Divinity Barrel___Can heal any wound___6-50-0___Barrel___D20
+HealPotion___Hand of Netho___??????????????___10-0-0___Canteen___D40
+HealPotion___Grace of Netho___??????????????___20-0-0___Barrel___D40

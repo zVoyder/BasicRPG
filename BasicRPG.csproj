@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <StartupObject>BasicRPG.Program</StartupObject>
     <ApplicationIcon>_Data\Icons\AppIcon.ico</ApplicationIcon>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>

@@ -12,6 +12,7 @@ namespace BasicRPG.InventorySystem.Weapons
     class Bow : InventorySystem.Weapons.Weapon
     {
         public int Arrows { get ; set ; }
+        public int MaxArrows { get; set; }
 
         readonly string[] attackDescriptions = {
             "You nock your arrow and shoot at the target.\n",
@@ -22,11 +23,27 @@ namespace BasicRPG.InventorySystem.Weapons
             "You decisevely take your arrow and shoot at the target.\n"
         };
 
-        public Bow(string name, string desc, Currency value, double weight, Dice damageDice, Statistic attraffinity, int arrows) 
+        public Bow(string name, string desc, Currency value, double weight, Dice damageDice, Statistic attraffinity, int arrows, int maxarrows)
             : base(name, desc, value, weight, damageDice, attraffinity)
         {
             Arrows = arrows;
             attacks = attackDescriptions;
+            MaxArrows = maxarrows;
+        }
+        
+        public int RefillArrows(int n)
+        {
+            if (n < 0)
+                throw new Exception("Error: Negative numbers");
+
+            int arrowsBefore = Arrows;
+            Arrows += n;
+            Arrows = Math.Clamp(Arrows, 0, MaxArrows);
+
+            if (Arrows > MaxArrows)
+                Arrows = MaxArrows;
+
+            return Arrows - arrowsBefore;
         }
 
         public override int Use()
@@ -39,17 +56,17 @@ namespace BasicRPG.InventorySystem.Weapons
             else
                 Console.WriteLine("You have run out of arrows.");
 
-            return -1;
+            return 0;
         }
 
         public override string ToString()
         {
-            return base.ToString() + "; Arrows Left: " + Arrows;
+            return base.ToString() + "; Arrows Left: " + Arrows + "/" + MaxArrows;
         }
 
         public override string ToShortString()
         {
-            return base.ToShortString() + " ##---> " + Arrows;
+            return base.ToShortString() + " ##---> " + Arrows + "/" + MaxArrows;
         }
     }
 }

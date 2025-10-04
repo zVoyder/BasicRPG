@@ -12,6 +12,7 @@ namespace BasicRPG.Character.RPGClasses
     class Ranger : RPGClass
     {
         Bow huntBow;
+        Sword dagger;
 
         public Ranger() : base()
         {
@@ -20,37 +21,46 @@ namespace BasicRPG.Character.RPGClasses
             Classtype = RPGClassTypes.Ranger;
 
             Description = "Warriors of the wilderness, rangers specialize in hunting the monsters\n" +
-            "that threaten the edges of civilization—humanoid raiders, rampaging beasts and monstrosities,\n" +
-            "terrible giants, and deadly dragons. They learn to track their quarry as a predator does,\n" +
-            "moving stealthily through the wilds and hiding themselves in brush and rubble.\n" +
-            "Rangers focus their combat training on techniques that are particularly\n" +
-            "useful against their specific favored foes.";
+                          "that threaten the edges of civilization—humanoid raiders, rampaging beasts and monstrosities,\n" +
+                          "terrible giants, and deadly dragons. They learn to track their quarry as a predator does,\n" +
+                          "moving stealthily through the wilds and hiding themselves in brush and rubble.\n" +
+                          "Rangers focus their combat training on techniques that are particularly\n" +
+                          "useful against their specific favored foes.";
 
-            huntBow =
-                new Bow(
-                    "Hunting Bow",
-                    "A good bow if you for the hunt",
-                    new Currency(0, 0, 0),
-                    2.0,
-                    new Dice(DiceTypes.D8),
-                    Statistic.Dexterity
-                    ,15);
+            huntBow = new Bow(
+                "Hunting Bow",
+                "A good bow if you for the hunt",
+                new Currency(0, 0, 0),
+                2.0,
+                new Dice(DiceTypes.D7),
+                Statistic.Dexterity
+                ,
+                15,
+                15);
 
-            HealPotion baseFlask =
-                new HealPotion(
-                    "Lichen Moss Drink",
-                    "The default medicine for the Ranger",
-                    new Currency(0, 0, 0),
-                    PotionTypes.Flask,
-                    new Dice(DiceTypes.D4));
+            dagger = new Sword(
+                "Dagger",
+                "A small dagger, useful as a last resort",
+                new Currency(0, 0, 0),
+                2.0,
+                new Dice(DiceTypes.D3),
+                Statistic.Dexterity);
+
+            HealPotion baseFlask = new HealPotion(
+                "Lichen Moss Drink",
+                "The default medicine for the Ranger",
+                new Currency(0, 0, 0),
+                PotionTypes.Flask,
+                new Dice(DiceTypes.D4));
 
             BaseKit.Add(huntBow);
+            BaseKit.Add(dagger);
             BaseKit.Add(baseFlask);
 
             StatBonus = Statistic.Dexterity;
         }
 
-        public override int Skill(int id) //Implementazione delle diverse abilità per classe
+        public override int Skill(int id) // Different implementation of skills for each class
         {
             return id switch
             {
@@ -58,7 +68,7 @@ namespace BasicRPG.Character.RPGClasses
                 _ => 0,
             };
         }
-
+        
         public int PrecisionShot() // Esempio
         {
             return 0;

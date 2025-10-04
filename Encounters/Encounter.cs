@@ -23,34 +23,14 @@ namespace BasicRPG.Encounters
             Console.Clear();
 
             UIHandler.PrintPositionedText("A fight starts between " + player.Name + " and " + enemy.Name);
-
             UIHandler.PressAnyKeyToContinue();
 
             bool enemyIsDead = false;
-
-            //fare uno switch per selezionare cosa fare -> usare una skill OPPURE usare un item
 
             do
             {
                 AsciiArt playerVSenemy = AsciiArt.ModifyEndline(player.PlayerClass.Art, player.Name + " " + player.Hp.ToString()) + AsciiArt.ModifyEndline(enemy.Art, enemy.Name + " " + enemy.Hp.ToString());
                 
-                #region Enemy Turn
-
-                Console.Clear();
-                playerVSenemy.PrintAsciiArt();
-                Console.WriteLine();
-                UIHandler.PressAnyKeyToContinue("It's " + enemy.Name + "'s turn, press any key to continue...");
-                
-                Console.Clear();
-
-                enemy.Art.PrintAsciiArt();
-                player.TakeDamage(enemy.Attack());
-
-                #endregion
-
-                UIHandler.PressAnyKeyToContinue(player.Name + " remains with " + player.Hp);
-                Console.Clear();
-
                 #region Player Turn
 
                 playerVSenemy = AsciiArt.ModifyEndline(player.PlayerClass.Art, player.Name + " " + player.Hp.ToString()) + AsciiArt.ModifyEndline(enemy.Art, enemy.Name + " " + enemy.Hp.ToString());
@@ -87,18 +67,34 @@ namespace BasicRPG.Encounters
                 Console.WriteLine();
 
                 #endregion
-
+                                
                 UIHandler.PressAnyKeyToContinue();
-
                 
+                if (enemyIsDead)
+                    break;
+                
+                #region Enemy Turn
+
+                Console.Clear();
+                playerVSenemy.PrintAsciiArt();
+                Console.WriteLine();
+                UIHandler.PressAnyKeyToContinue("It's " + enemy.Name + "'s turn, press any key to continue...");
+                
+                Console.Clear();
+
+                enemy.Art.PrintAsciiArt();
+                player.TakeDamage(enemy.Attack());
+
+                #endregion
+                
+                UIHandler.PressAnyKeyToContinue(player.Name + " remains with " + player.Hp);
+                Console.Clear();
+
             } while (!enemyIsDead);
-
-
+            
             Console.Clear();
-
             Currency reward = enemy.GetReward(out int exp);
             
-
             enemy.Art.PrintAsciiArt();
             UIHandler.PrintPositionedText(enemy.Hp.ToString());
             enemy.Death();

@@ -45,7 +45,7 @@ namespace BasicRPG.Character
 
         int CalculateNextNeededExp()
         {
-            return numberLevel * nextExpFactor;
+            return numberLevel * numberLevel * nextExpFactor;
         }
 
         public override string ToString()

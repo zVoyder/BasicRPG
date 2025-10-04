@@ -28,7 +28,7 @@ namespace BasicRPG.Character.RPGClasses
                     "An old lute that can still strum a few notes.",
                     new Currency(0, 0, 0),
                     4.0,
-                    new Dice(DiceTypes.D8),
+                    new Dice(DiceTypes.D7),
                     Statistic.Charisma);
 
             HealPotion baseFlask =

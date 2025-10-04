@@ -200,6 +200,24 @@ namespace BasicRPG.Properties {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Giant Bat[PARAM]
+        ///Claw_D5,
+        ///Bite_D5,
+        ///Bloodlust_D7[PARAM]
+        ///                      __           _       _           __                       
+        ///               _..--&quot;&quot; .&quot;&quot;&quot;--._   ( \.---./ )   _.--&quot;&quot;&quot;. &quot;&quot;--.._                
+        ///           .-&apos;`     &apos; .    `&apos;-.&apos;.  \/ - - \/  .&apos;.-&apos;`    . &apos;     `&apos;-.            
+        ///        .&apos;`       &apos;            &apos;.\  \  ^  /  /.&apos;             &apos;      `&apos;.         
+        ///       /__      &apos;     .          \`\/`-&quot;-`\/`/          &apos;      &apos;     __\        
+        ///       `  &apos;. .&apos; __    .   _       \{        [stringa troncata]&quot;;.
+        /// </summary>
+        internal static string bat {
+            get {
+                return ResourceManager.GetString("bat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a Giant Bee[PARAM]
         ///Sting_D4,
         ///Bite_D4,
@@ -247,13 +265,12 @@ namespace BasicRPG.Properties {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a HealPotion	Flask of Life	A simple medicine	0-0-25	Flask	D4
-        ///HealPotion	Wineskin of Life	A wineskin full of life	0-0-50	Canteen	D4
-        ///HealPotion	Tonic of Life	This tonic will heal your flesh	0-1-0	Flask	D6
-        ///HealPotion	Vial of Rejuvenation	Rejuvenate yourself	0-1-50	Vial	D8
-        ///HealPotion	Elixir of Regeneration	This fantastic elixir can really fix you up	0-25-0	Flask	D8
-        ///HealPotion	Wineskin of Regeneration	A wineskin full of regeneration elixir	0-50-0	Wineskin	D8
-        ///HealPotion	Barrel of Regeneration	A barrel full of [stringa troncata]&quot;;.
+        ///   Cerca una stringa localizzata simile a HealPotion___Flask of Life___A simple medicine___0-0-25___Flask___D4
+        ///HealPotion___Wineskin of Life___A wineskin full of life___0-0-50___Canteen___D4
+        ///HealPotion___Tonic of Life___This tonic will heal your flesh___0-1-0___Flask___D6
+        ///HealPotion___Vial of Rejuvenation___Rejuvenate yourself___0-1-50___Vial___D8
+        ///HealPotion___Elixir of Regeneration___This fantastic elixir can really fix you up___0-25-0___Flask___D8
+        ///HealPotion___Wineskin of Regeneration___A wineskin full of regeneration elixir___0-50-0___Wines [stringa troncata]&quot;;.
         /// </summary>
         internal static string Data_Potions {
             get {
@@ -262,15 +279,13 @@ namespace BasicRPG.Properties {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Sword	Greatsword	A big sword	0-10-0	5	D8	Strength	
-        ///Sword	Katana	Sharp and Lethal	1-0-0	3	D12	Dexterity	
-        ///Sword	Longsword	Short and handy	0-0-50	3	D6	Strength	
-        ///Sword	Broadsword	Wide blade sword	0-1-0	3	D7	Strength	
-        ///Sword	Darksword	Its blade is full of dark magic	3-0-0	6	D13	Intelligence	
-        ///Sword	Drake Sword	A sword made of dragon scales	3-0-0	8	D14	Strength	
-        ///Sword	Blade of Dominance	A sword that demands dominance	0-50-0	5	D10	Charisma	
-        ///Sword	Crystal Sword	Shines in the dark	3-50-0	4	D12	Intelligence	
-        ///Sw [stringa troncata]&quot;;.
+        ///   Cerca una stringa localizzata simile a Sword___Greatsword___A big sword___0-10-0___5___D8___Strength
+        ///Sword___Katana___Sharp and Lethal___1-0-0___3___D12___Dexterity
+        ///Sword___Longsword___Short and handy___0-0-50___3___D6___Strength
+        ///Sword___Broadsword___Wide blade sword___0-1-0___3___D7___Strength
+        ///Sword___Darksword___Its blade is full of dark magic___3-0-0___6___D13___Intelligence
+        ///Sword___Drake Sword___A sword made of dragon scales___3-0-0___8___D14___Strength
+        ///Sword___Blade of Dominance___A sword that demands dominance___0-50-0___5___D10___Ch [stringa troncata]&quot;;.
         /// </summary>
         internal static string Data_Weapons {
             get {
@@ -461,68 +476,52 @@ namespace BasicRPG.Properties {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a la_3_500
-        ///do_4_250
-        ///re_4_250
-        ///mi_4_500
+        ///   Cerca una stringa localizzata simile a la_2_750
+        ///rest_0_250
+        ///do_3_500
+        ///la_2_250
         ///
-        ///fa_4_375
+        ///fa_2_625
         ///rest_0_125
+        ///mi_2_250
+        ///fa_2_250
         ///
-        ///sol_4_250
-        ///fa_4_250
-        ///mi_4_250
-        ///re_4_250
-        ///
-        ///do_4_500
-        ///rest_0_250
-        ///
-        ///la_3_500
-        ///do_4_250
-        ///re_4_250
-        ///fa_4_500
-        ///
-        ///mi_4_375
+        ///la_2_750
+        ///sol_2_250
         ///rest_0_125
+        ///fa_2_250
         ///
-        ///sol_4_125
-        ///fa_4_125
-        ///mi_4_125
-        ///re_4_125
+        ///mi_2_375
+        ///rest_0_125
+        ///re_2_250
+        ///mi_2_250
         ///
-        ///do_4_250
+        ///do_2_750
         ///rest_0_250
+        ///la_2_250
+        ///sol_2_250
         ///
-        ///la_3_500
-        ///sol_3_250
-        ///la_3_250
-        ///do_4_500
+        ///fa_2_625
+        ///mi_2_250
+        ///rest_0_125
+        ///la_2_250
         ///
-        ///re_4_250
-        ///mi_4_250
-        ///fa_4_250
-        ///mi_4_250
-        ///
-        ///re_4_500
+        ///re_2_750
         ///rest_0_250
+        ///mi_2_250
+        ///fa_2_250
         ///
-        ///do_4_125
-        ///do_4_125
-        ///do_4_250
+        ///sol_2_625
+        ///rest_0_125
+        ///mi_2_250
+        ///fa_2_250
         ///
-        ///re_4_125
-        ///re_4_125
-        ///re_4_250
-        ///
-        ///mi_4_125
-        ///fa_4_125
-        ///sol_4_188
-        ///fa_4_62
-        ///
-        ///mi_4_500
-        ///
-        ///fa_4_125
-        ///fa_4_125        /// [stringa troncata]&quot;;.
+        ///la_2_1000
+        ///rest_0_250
+        ///la_2_1000
+        ///rest_0_250
+        ///la_2_1000
+        ///.
         /// </summary>
         internal static string Music_Ekylios {
             get {

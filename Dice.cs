@@ -72,7 +72,11 @@ namespace BasicRPG.Dices
         {
             return dice.ToString();
         }
-
+        
+        public int GetMaxValue()
+        {
+            return Convert.ToInt32(dice.ToString().Trim('D')) * rolls;
+        }
 
         /*
         const string diceanimationpath = "DiceRollAscii";

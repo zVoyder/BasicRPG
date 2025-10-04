@@ -41,7 +41,7 @@ namespace BasicRPG.Character.RPGClasses
             StatBonus = Statistic.Intelligence;
         }
 
-        public override int Skill(int id) //Implementazione delle diverse abilità per classe
+        public override int Skill(int id)
         {
             return id switch
             {
