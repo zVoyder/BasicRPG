@@ -15,7 +15,7 @@ namespace BasicRPG.UI
 
     static class UIHandler
     {
-        public static Dictionary<T, int> SelectIntOfKeys<T>(Dictionary<T, int> dict, int distribution, string incipit = "Select", int min = 0, int max = 100, TextPosition textpos = TextPosition.Center, ConsoleColor textColor = ConsoleColor.White, ConsoleColor selectedTextColor = ConsoleColor.Yellow)
+        public static Dictionary<T, int> SelectIntOfKeys<T>(Dictionary<T, int> dict, int distribution, string incipit = "Select", int min = 0, int max = 100, TextPosition textpos = TextPosition.Center, ConsoleColor textColor = ConsoleColor.White, ConsoleColor selectedTextColor = ConsoleColor.Yellow, bool printMaxDistr = true)
         {
             int cursorPosition = 0;
             int maxDistr = distribution;
@@ -59,9 +59,12 @@ namespace BasicRPG.UI
                     }
 
                     Console.WriteLine();
-                    UIHandler.PrintPositionedText("Distribution " + distribution.ToString() + "/" + maxDistr.ToString());
+                    if (printMaxDistr)
+                        UIHandler.PrintPositionedText("Distribution " + distribution.ToString() + "/" + maxDistr.ToString());
+                    else
+                        UIHandler.PrintPositionedText("Points " + distribution.ToString());
+                    
                     Console.WriteLine();
-
                     //Pointer
                     arrowkey = Console.ReadKey(true).Key;
 
@@ -131,7 +134,7 @@ namespace BasicRPG.UI
         /// <param name="textColor">Base color of the text</param>
         /// <param name="selectedTextColor">Color of the selected line</param>
         /// <returns>the int index of the selected string</returns>
-        public static int SelectiveChoice(string incipit, string[] choices, TextPosition textpos = TextPosition.Center, ConsoleColor textColor = ConsoleColor.White, ConsoleColor selectedTextColor = ConsoleColor.Yellow)
+        public static int SelectiveChoice(string incipit, string[] choices, TextPosition textpos = TextPosition.Center, ConsoleColor textColor = ConsoleColor.White, ConsoleColor selectedTextColor = ConsoleColor.Yellow, ConsoleColor incipitColor = ConsoleColor.White)
         {
             int cursorPosition = 0;
             ConsoleKey arrkey;
@@ -141,7 +144,7 @@ namespace BasicRPG.UI
 
                 Console.WriteLine("\n");
 
-                PrintPositionedText(incipit.Split("\n"), textpos); //Print of the incipit
+                PrintPositionedText(incipit.Split("\n"), textpos, incipitColor); //Print of the incipit
 
                 Console.WriteLine("\n");
 

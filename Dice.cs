@@ -37,14 +37,16 @@ namespace BasicRPG.Dices
     {
         DiceTypes dice;
         public DiceTypes CurrentDice { get => dice; set => dice = value; }
+        public int LastRoll => lastRoll;
+
         int rolls;
+        int lastRoll;
 
         public Dice(DiceTypes dice, int rolls = 1)
         {
             this.dice = dice;
             this.rolls = rolls;
         }
-
 
         public int RollDice()
         {
@@ -56,9 +58,10 @@ namespace BasicRPG.Dices
                 total += rnd.Next(1, Convert.ToInt32(dice.ToString().Trim('D')) + 1);
             }
 
+            lastRoll = total;
             return total;
         }
-        
+
         public static int RollDice(DiceTypes dice, int quantity = 1)
         {
             int total = 0;
@@ -76,7 +79,7 @@ namespace BasicRPG.Dices
         {
             return dice.ToString();
         }
-        
+
         public int GetMaxValue()
         {
             return Convert.ToInt32(dice.ToString().Trim('D')) * rolls;
@@ -85,7 +88,7 @@ namespace BasicRPG.Dices
         /*
         const string diceanimationpath = "DiceRollAscii";
 
-        
+
         public static int RollDiceWithAnimation(DiceTypes dice, int quantity=1, ConsoleColor color = ConsoleColor.Magenta)
         {
             Console.CursorVisible = false;

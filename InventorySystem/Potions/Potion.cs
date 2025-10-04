@@ -30,24 +30,25 @@ namespace BasicRPG.InventorySystem.Potions
             this.maxUsages = usages;
             this.potiontype = potiontype;
         }
-
         
-
-        /// <summary>
-        /// For the base class its return is the remaining usages.
-        /// </summary>
-        /// <returns>The remaining usages of the potion</returns>
         public override int Use()
         {
-            if(usages > 0) {
+            if (usages > 0)
+            {
                 usages--;
             }
             else
             {
                 UIHandler.PrintPositionedText("Your " + Name + " is empty");
+                return 0;
             }
+            
+            OnUsed();
+            return 1;
+        }
 
-            return Usages;
+        protected override void OnUsed()
+        {
         }
 
         public override string ToString()

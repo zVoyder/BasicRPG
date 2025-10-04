@@ -235,14 +235,14 @@ namespace BasicRPG.Character
 
             if (nl > 0)
             {
-                UIHandler.PrintPositionedText("Your Level Increased by " + nl + "!");
+                UIHandler.PrintPositionedText("Your Level Increased by " + nl + "!", TextPosition.Center, ConsoleColor.Yellow);
+                UIHandler.PressAnyKeyToContinue("You can now increase or rearrange your attributes by " + (nl * 2) + " points, minimum value for each attribute is 8.");
+
+                int points = nl * 2 * playerAttributes.Attributes.Count;
+                playerAttributes.RearrangePointBuy(8, points);
+                
                 UIHandler.PressAnyKeyToContinue("Your attributes increased and since you are a " + playerClass.GetType().Name + " you have a bonus on " + playerClass.StatBonus);
-
-
-                playerAttributes.AddToAttributes(nl, nl, nl, nl, nl, nl);
                 playerAttributes.AddToAttribute(playerClass.StatBonus, nl);
-
-
                 CalculateHitPoints();
             }
 
@@ -260,12 +260,12 @@ namespace BasicRPG.Character
             return weaponDamage + bonusDamage;
         }
 
-        private int CalculateAttack(Weapon wep, int weaponDamage)
+        private int CalculateAttack(Weapon wep, int roll)
         {
             int value = playerAttributes.Attributes[wep.AttributeAffinity];
             int lvl = Level.NumberLevel;
             int maxDamage = wep.damageDice.GetMaxValue();
-            double rollFactor = (double)weaponDamage / maxDamage;
+            double rollFactor = (double)roll / maxDamage;
 
             int bonus = wep.AttributeAffinity switch
             {
@@ -289,19 +289,35 @@ namespace BasicRPG.Character
             }
         }
 
-        public void HealPlayer(HealPotion pot, out int bonusHeal)
+        public bool HealPlayer(HealPotion pot, out int bonusHeal)
         {
-            bonusHeal = CalculateHealBonus();
-            int heal = pot.Use();
+            bonusHeal = 0;
+            
+            if (pot.Use() == 0)
+                return false;
+            
+            int heal = pot.healDice.LastRoll;
+            bonusHeal = CalculateHealBonus(pot, heal);
             heal += bonusHeal;
             hp.Heal(heal);
+            return true;
         }
 
-        private int CalculateHealBonus()
+        private int CalculateHealBonus(HealPotion pot, int roll)
         {
             int wisdom = playerAttributes.Attributes[Statistic.Wisdom];
+            int constitution = playerAttributes.Attributes[Statistic.Constitution];
+            int intelligence = playerAttributes.Attributes[Statistic.Intelligence];
             int lvl = Level.NumberLevel;
-            return (int)Math.Sqrt(wisdom * 2) + (lvl / 3) + 2;
+            double rollFactor = (double)roll / pot.healDice.GetMaxValue();
+
+            int baseBonus =
+                (int)(Math.Sqrt(wisdom * 2)) +
+                (constitution / 4) +
+                (int)(Math.Log(intelligence + 1)) +
+                (lvl / 3) + 2;
+
+            return (int)(baseBonus * rollFactor);
         }
 
         public void Death()
@@ -330,7 +346,7 @@ namespace BasicRPG.Character
                 "No "
             };
 
-            int choice = UIHandler.SelectiveChoice(dead, menuChoices, TextPosition.Center, ConsoleColor.DarkRed);
+            int choice = UIHandler.SelectiveChoice(dead, menuChoices, TextPosition.Center, ConsoleColor.White, ConsoleColor.Yellow, ConsoleColor.Red);
             if (choice == 0)
             {
                 ProcessModule processModule = System.Diagnostics.Process.GetCurrentProcess().MainModule;
@@ -339,6 +355,11 @@ namespace BasicRPG.Character
             }
 
             Environment.Exit(0);
+        }
+
+        public bool IsAlive()
+        {
+            return hp.CurrentHealth > 0;
         }
     }
 }

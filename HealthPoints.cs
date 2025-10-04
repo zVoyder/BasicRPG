@@ -9,6 +9,8 @@ namespace BasicRPG
         int currentHealth, maxHealth;
         char symbol;
         public int MaxHealth { get => maxHealth; set => maxHealth = value; }
+        
+        public int CurrentHealth { get => currentHealth; }
 
         public HealthPoints(int maxHealth = 100, char symbol = '♥')
         {

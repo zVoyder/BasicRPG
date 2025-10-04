@@ -40,10 +40,8 @@ namespace BasicRPG.InventorySystem.Weapons
         public override int Use()
         {
             int d = damageDice.RollDice();
-
             UIHandler.PrintPositionedText(attacks[new Random().Next(0, attacks.Length-1)]); //Attack description
             UIHandler.PrintPositionedText("You have rolled: " + d, TextPosition.Center, ConsoleColor.Cyan);
-
             return d;
         }
 

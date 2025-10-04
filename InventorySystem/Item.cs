@@ -43,7 +43,14 @@ namespace BasicRPG.InventorySystem
             return Name;
         }
 
-        public abstract int Use();
+        public virtual int Use()
+        {
+            OnUsed();
+            return 0; // Return 0 if the item has no specific use
+        }
 
+        protected virtual void OnUsed()
+        {
+        }
     }
 }

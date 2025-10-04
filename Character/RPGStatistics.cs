@@ -43,6 +43,11 @@ namespace BasicRPG.Character
             SetAttributes(8, 8, 8, 8, 8, 8);
             attributes = UIHandler.SelectIntOfKeys(attributes, pointstoassign, "Assign your points", min);
         }
+        
+        public void RearrangePointBuy(int min = 8, int newPoints = 27)
+        {
+            attributes = UIHandler.SelectIntOfKeys(attributes, newPoints, "Assign your points", min, int.MaxValue, TextPosition.Center, ConsoleColor.White, ConsoleColor.Yellow, false);
+        }
 
         public void RandomGeneration()
         {
